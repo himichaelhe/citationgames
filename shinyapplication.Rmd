@@ -1,0 +1,85 @@
+---
+title: "shinyfeature1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(shiny)
+library(shinyWidgets)
+library(dslabs)
+library(tidyverse)
+library(plotly)
+```
+
+```{r}
+fulldata <- read_csv("fulldata.csv")
+fulldata
+```
+
+```{r}
+ui<- fluidPage(
+  
+  headerPanel("Citation Games"), 
+  sidebarLayout(
+    sidebarPanel(
+      checkboxGroupInput("subjectInput",
+                     "Subject",
+                     choices=unique(fulldata$Subject),
+                     selected="Acoustics")
+    ),
+    mainPanel(
+      tabsetPanel(type="tab",
+      tabPanel("New Publications", plotOutput("fulldataplot")),
+      tabPanel("Publication Weight",plotOutput("plot1")),
+      tabPanel("Highly Cited",plotOutput("plot2")),
+      tabPanel("Stickiness", plotOutput("plot3"))
+      )
+  )
+)
+)
+
+
+server<- function(input,output) {
+  d<-reactive({
+    fulldata%>%
+      filter(
+        Subject %in% input$subjectInput)
+  })
+  output$fulldataplot<- renderPlot({
+    ggplot(d(), aes(x=yr,y=newPubs,color=Subject))+
+      geom_line()+
+      xlab("Year") +
+      ylab("Count")+
+      scale_x_continuous(breaks = seq(1960,2021,5))+
+      ggtitle("Number of Papers Published Per Year")
+  })
+    output$plot1 <- renderPlot({
+      ggplot(d(), 
+             aes(x = yr, y = proptotal,color=Subject)) +
+      geom_line()+
+      xlab("Year") +
+      ylab("Proportion")+
+      ggtitle("Proportion of Subject Papers Published Over All Publications")+
+      scale_x_continuous(breaks = seq(1960,2021,5))
+  })
+  output$plot2 <- renderPlot({
+      ggplot(d(), 
+             aes(x = yr, y = proptop,color=Subject)) +
+      geom_line()+
+      xlab("Year") +
+      ylab("Proportion")+
+      ggtitle("Proportion of Papers Published That Will Ever Become Highly Cited")+
+      scale_x_continuous(breaks = seq(1960,2021,5))
+  })
+   output$plot3 <- renderPlot({
+      ggplot(d(), 
+             aes(x = yr, y = rnkCor,color=Subject)) +
+      geom_line()+
+      xlab("Year") +
+      ylab("Stickiness Correlation")+
+      ggtitle("Correlation of Top 50 Most-Cited Articles From Current Year to the Next")+
+      scale_x_continuous(breaks = seq(1960,2021,5))
+  })
+}
+shinyApp(ui=ui,server = server)
+```

@@ -1,0 +1,252 @@
+﻿subjectID,Subject
+1,Acoustics
+2,Agricultural Economics & Policy
+3,Agricultural Engineering
+4,"Agriculture, Dairy & Animal Science"
+5,"Agriculture, Multidisciplinary"
+6,Agronomy
+7,Allergy
+8,Anatomy & Morphology
+9,Andrology
+10,Anesthesiology
+11,Anthropology
+12,Archaeology
+13,Architecture
+14,Area Studies
+15,Art
+17,Asian Studies
+18,Astronomy & Astrophysics
+19,Audiology & Speech-Language Pathology
+20,Automation & Control Systems
+21,Behavioral Sciences
+22,Biochemical Research Methods
+23,Biochemistry & Molecular Biology
+24,Biodiversity Conservation
+26,Biology
+28,Biophysics
+29,Biotechnology & Applied Microbiology
+30,Business
+31,"Business, Finance"
+32,Cardiac & Cardiovascular Systems
+33,Cell & Tissue Engineering
+34,Cell Biology
+36,"Chemistry, Analytical"
+37,"Chemistry, Applied"
+38,"Chemistry, Inorganic & Nuclear"
+39,"Chemistry, Medicinal"
+40,"Chemistry, Multidisciplinary"
+41,"Chemistry, Organic"
+42,"Chemistry, Physical"
+43,Classics
+44,Clinical Neurology
+45,Communication
+46,"Computer Science, Artificial Intelligence"
+47,"Computer Science, Cybernetics"
+48,"Computer Science, Hardware & Architecture"
+49,"Computer Science, Information Systems"
+50,"Computer Science, Interdisciplinary Applications"
+51,"Computer Science, Software Engineering"
+52,"Computer Science, Theory & Methods"
+53,Construction & Building Technology
+54,Criminology & Penology
+55,Critical Care Medicine
+56,Crystallography
+57,Cultural Studies
+58,Dance
+59,Demography
+60,"Dentistry, Oral Surgery & Medicine"
+61,Dermatology
+62,Developmental Biology
+63,Ecology
+64,Economics
+65,Education & Educational Research
+66,"Education, Scientific Disciplines"
+67,"Education, Special"
+68,Electrochemistry
+69,Emergency Medicine
+70,Endocrinology & Metabolism
+71,Energy & Fuels
+73,"Engineering, Aerospace"
+74,"Engineering, Biomedical"
+75,"Engineering, Chemical"
+76,"Engineering, Civil"
+77,"Engineering, Electrical & Electronic"
+78,"Engineering, Environmental"
+79,"Engineering, Geological"
+80,"Engineering, Industrial"
+81,"Engineering, Manufacturing"
+82,"Engineering, Marine"
+83,"Engineering, Mechanical"
+84,"Engineering, Multidisciplinary"
+85,"Engineering, Ocean"
+86,"Engineering, Petroleum"
+87,Entomology
+88,Environmental Sciences
+89,Environmental Studies
+90,Ergonomics
+91,Ethics
+92,Ethnic Studies
+93,Evolutionary Biology
+94,Family Studies
+95,"Film, Radio & Television"
+96,Fisheries
+97,Folklore
+98,Food Science & Technology
+99,Forestry
+100,Gastroenterology & Hepatology
+103,Genetics & Heredity
+104,Geochemistry & Geophysics
+105,Geography
+106,"Geography, Physical"
+107,Geology
+108,"Geosciences, Multidisciplinary"
+109,Geriatrics & Gerontology
+110,Gerontology
+112,Health Care Sciences & Services
+113,Health Policy & Services
+114,Hematology
+115,History
+116,History & Philosophy of Science
+117,History Of Social Sciences
+118,Horticulture
+119,"Hospitality, Leisure, Sport & Tourism"
+120,"Humanities, Multidisciplinary"
+121,Imaging Science & Photographic Technology
+122,Immunology
+123,Industrial Relations & Labor
+124,Infectious Diseases
+125,Information Science & Library Science
+126,Instruments & Instrumentation
+127,Integrative & Complementary Medicine
+128,International Relations
+129,Language & Linguistics
+130,Law
+133,Limnology
+134,Linguistics
+135,Literary Reviews
+136,Literary Theory & Criticism
+137,Literature
+138,"Literature, African, Australian, Canadian"
+139,"Literature, American"
+140,"Literature, British Isles"
+141,"Literature, German, Dutch, Scandinavian"
+142,"Literature, Romance"
+143,"Literature, Slavic"
+144,Logic
+145,Management
+146,Marine & Freshwater Biology
+148,"Materials Science, Biomaterials"
+149,"Materials Science, Ceramics"
+150,"Materials Science, Characterization & Testing"
+151,"Materials Science, Coatings & Films"
+152,"Materials Science, Composites"
+153,"Materials Science, Multidisciplinary"
+154,"Materials Science, Paper & Wood"
+155,"Materials Science, Textiles"
+156,Mathematical & Computational Biology
+158,Mathematics
+159,"Mathematics, Applied"
+160,"Mathematics, Interdisciplinary Applications"
+161,Mechanics
+162,Medical Ethics
+163,Medical Informatics
+164,Medical Laboratory Technology
+165,"Medicine, General & Internal"
+166,"Medicine, Legal"
+167,"Medicine, Research & Experimental"
+168,Medieval & Renaissance Studies
+169,Metallurgy & Metallurgical Engineering
+170,Meteorology & Atmospheric Sciences
+171,Microbiology
+172,Microscopy
+173,Mineralogy
+174,Mining & Mineral Processing
+175,Multidisciplinary Sciences
+176,Music
+177,Mycology
+178,Nanoscience & Nanotechnology
+179,Neuroimaging
+180,Neurosciences & Neurology
+181,Nuclear Science & Technology
+182,Nursing
+183,Nutrition & Dietetics
+184,Obstetrics & Gynecology
+186,Oceanography
+187,Oncology
+188,Operations Research & Management Science
+189,Ophthalmology
+190,Optics
+191,Ornithology
+192,Orthopedics
+193,Otorhinolaryngology
+194,Paleontology
+195,Parasitology
+196,Pathology
+197,Pediatrics
+198,Peripheral Vascular Disease
+199,Pharmacology & Pharmacy
+200,Philosophy
+201,"Physics, Applied"
+202,"Physics, Atomic, Molecular & Chemical"
+203,"Physics, Condensed Matter"
+204,"Physics, Fluids & Plasmas"
+205,"Physics, Mathematical"
+206,"Physics, Multidisciplinary"
+207,"Physics, Nuclear"
+208,"Physics, Particles & Fields"
+209,Physiology
+210,Planning & Development
+211,Plant Sciences
+212,Poetry
+213,Political Science
+214,Polymer Science
+215,Primary Health Care
+216,Psychiatry
+217,Psychology
+218,"Psychology, Applied"
+219,"Psychology, Biological"
+220,"Psychology, Clinical"
+221,"Psychology, Developmental"
+222,"Psychology, Educational"
+223,"Psychology, Experimental"
+224,"Psychology, Mathematical"
+225,"Psychology, Multidisciplinary"
+226,"Psychology, Psychoanalysis"
+227,"Psychology, Social"
+228,Public Administration
+229,"Public, Environmental & Occupational Health"
+230,"Radiology, Nuclear Medicine & Medical Imaging"
+231,Rehabilitation
+232,Religion
+233,Remote Sensing
+234,Reproductive Biology
+235,Respiratory System
+236,Rheumatology
+237,Robotics
+238,Social Issues
+239,"Social Sciences, Biomedical"
+240,"Social Sciences, Interdisciplinary"
+241,"Social Sciences, Mathematical Methods"
+242,Social Work
+243,Sociology
+244,Soil Science
+245,Spectroscopy
+246,Sport Sciences
+247,Statistics & Probability
+248,Substance Abuse
+249,Surgery
+250,Telecommunications
+251,Theater
+252,Thermodynamics
+253,Toxicology
+254,Transplantation
+255,Transportation
+256,Transportation Science & Technology
+257,Tropical Medicine
+258,Urban Studies
+259,Urology & Nephrology
+260,Veterinary Sciences
+261,Virology
+262,Water Resources
+263,Women's Studies
+264,Zoology

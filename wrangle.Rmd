@@ -1,0 +1,131 @@
+---
+title: "Wrangling"
+author: "Michael He"
+date: "11/16/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# load the data
+
+library(tidyverse)
+library(tidymodels)
+library(readr)
+
+subjectYrData <- read_csv("subjectYrData.csv")
+
+subjectYrDatajoin <- read_csv("subjectYrDatajoin.csv")
+
+fulldata <- inner_join(subjectYrData, subjectYrDatajoin, by=c("subjectID"))
+```
+
+```{r}
+# mutate new variables
+
+fulldata <- fulldata %>%
+  group_by(yr) %>%
+  filter(yr < 2015) %>%
+  mutate(newPubs = round(10^(lnPubs))) %>% 
+  # base-10 log of publications per year
+  mutate(topcited = round(newPubs * p01Pct)) %>%
+  # rough estimation of top cited publications in each field
+  mutate(totaltop = sum(topcited, na.rm = TRUE)) %>%
+  # number of total top cited publications each year
+  mutate(totalpaper = sum(newPubs, na.rm = TRUE)) %>%
+  # number of new publications each year
+  mutate(proptop = topcited/totaltop) %>%
+  # proportion of top publications in one field over that year's total top cited ones
+  mutate(proptotal = newPubs/totalpaper) 
+
+write.csv(fulldata,"fulldata.csv", row.names = FALSE)
+```
+
+```{r}
+# aggregate
+fulldata %>%
+  group_by(yr) %>%
+  ggplot(aes(x = yr, y = totalpaper)) +
+  geom_line() +
+  geom_smooth(method='lm') +
+  ggtitle("Number of New Publications Each Year") +
+  xlab("year") + 
+  ylab("count")
+```
+
+
+```{r}
+# aggregate plot
+# Shiny: do this, but also for subjectID (done) and groups (not yet)
+
+fulldata %>%
+  group_by(yr) %>%
+  summarize(canonprob = totaltop/totalpaper) %>%
+  distinct(canonprob) %>%
+  ggplot(aes(x = yr, y = canonprob)) +
+  geom_line() +
+  geom_smooth(method='lm') +
+  ggtitle("Percentage of Papers Published That Will Ever Become Highly Cited") +
+  xlab("year") + 
+  ylab("proportion")
+```
+
+
+```{r}
+# prototype for Shiny feature (share of pie)
+
+fulldata %>%
+  filter(subjectID == 3) %>%
+  ggplot(aes(x = yr, y = proptotal)) +
+  geom_line() 
+```
+
+```{r}
+# linear regression for publication count and year
+lm(totalpaper~yr,data = fulldata) %>%
+  summary()
+```
+
+```{r}
+# most published fields sorting
+# Shiny: should make a distribution by fields by year (individual subjectID and combined fields)
+
+fulldata %>%
+  select(yr, Subject, newPubs, topcited, totalpaper, proptop, proptotal) %>%
+  arrange(desc(newPubs))
+```
+
+
+
+```{r}
+# rnkCor shows stickiness of canon rolled over into the next 
+# read on Spearman correlation
+# here 47-52 are CS fields
+# seems like more stickiness of top cited papers in later years, not necessarily good
+
+fulldata %>%
+  filter(subjectID == c(47, 48, 49, 50, 51, 52) ) %>% 
+  ggplot(aes(x = yr, y = rnkCor, color = as.factor(subjectID))) +
+  geom_line() +
+  ggtitle("Stickiness of Top Cited Publications In CS ") +
+  xlab("year") + 
+  ylab("Stickiness Correlation")
+  
+```
+
+```{r}
+# using mdn01, which is another evidence to show if papers can reach the top
+# made NA rows into 0
+# Shiny: this one needs to zoom in on a specific field
+
+fulldata %>%
+  filter(subjectID == 47) %>%
+  mutate(mdn01new = if_else(is.na(mdn01), 0, mdn01)) %>%
+  ggplot(aes(x = yr, y = mdn01new)) +
+  geom_line()
+```
+
+

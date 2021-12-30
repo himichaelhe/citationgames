@@ -1,0 +1,13 @@
+name: citationgames
+title: citationgames
+username:
+account: michaelhe
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5381946
+bundleId: 5420895
+url: https://michaelhe.shinyapps.io/citationgames/
+when: 1640900230.33774
+lastSyncTime: 1640900230.33776
+asMultiple: FALSE
+asStatic: FALSE
